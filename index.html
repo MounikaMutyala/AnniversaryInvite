@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SUNIL Will You Be My Valentine?</title>
+  <title>Will You Be My Valentine?</title>
 
   <style>
     body {
@@ -17,7 +17,7 @@
 
     .card {
       width: 360px;
-      height: 260px;
+      height: 320px;
       background: white;
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
@@ -27,20 +27,15 @@
     }
 
     h1 {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .buttons {
       position: relative;
       height: 80px;
+      margin-top: 20px;
     }
-    
-    img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
+
     button {
       padding: 12px 24px;
       font-size: 16px;
@@ -72,11 +67,11 @@
 
 <body>
 
-  <div class="card">
-    <img src="pig.jpg" alt="pig image" style="width:50%;">
-    <h1>Sunil Will You Be My Valentine? ❤️</h1>
+  <div class="card" id="card">
+     <img src="pig.jpeg" alt="pig image" style="width:50%;">
+    <h1 id="question">Sunil Will you be my Valentine? ❤️</h1>
 
-    <div class="buttons">
+    <div class="buttons" id="buttons">
       <button id="yes" onclick="sayYes()">Yes</button>
       <button id="no" onmouseover="moveNo()">No</button>
     </div>
@@ -85,11 +80,14 @@
 
   <script>
     function sayYes() {
-      const cardtest=document.getElementById("card");
-      cardtest.innerHTML ='
-        <div class="result"><img src="pig.jpg" alt="pig image">
-        <h1 style='text-align:center;'>Yay!! 💕 Love You My Valentine 😍</h1>
-        <div class="result"><img src="dance.gif" alt="excited">';
+      const card = document.getElementById("card");
+
+      card.innerHTML = `
+        <h1>Yay!! Love you my Valentine ❤️</h1>
+        <div class="result">
+          <img src="dance.gif" alt="Love">
+        </div>
+      `;
     }
 
     function moveNo() {
